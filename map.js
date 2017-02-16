@@ -14,7 +14,7 @@ function initialize() {
         keyboardShortcuts: false,
         draggable: true,
         disableDoubleClickZoom: false,
-        scrollwheel: false,
+        scrollwheel: true,
         streetViewControl: true,
         mapTypeControl:false,
         /*mapTypeControlOptions: {
