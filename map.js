@@ -77,13 +77,15 @@ function addLayer(type) {
 
 
             //add WMS layer
-            map.overlayMapTypes.push(SDLLayer);
-}
-function removeLayer() {
-    if (SDLLayer) {
-                map.overlayMapTypes.removeAt(SDLLayer);
+            if(type==="A1"){
+                map.overlayMapTypes.setAt("3",SDLLayer);
+            } else if(type==="A2"){
+                map.overlayMapTypes.setAt("2",SDLLayer);
+            } else if(type==="A3"){
+                map.overlayMapTypes.setAt("1",SDLLayer);
             }
 }
+
 
 $(document).ready(function() {//使用jquery 當整個html document都讀完以後 在做以下的事情
     $('input:radio').change(function() {// 抓取<input>標籤 dom裡面 有radio屬性  change事件
@@ -136,13 +138,13 @@ $(document).ready(function() {//使用jquery 當整個html document都讀完以�
         if(!layerIsChecked){
             if (mapLayerType == "A1") {
                 console.log("CancelmapLayerType=" + mapLayerType);
-                removeLayer();
+                map.overlayMapTypes.setAt("3",null);
             } else if (mapLayerType == "A2") {
                 console.log("CancelmapLayerType=" + mapLayerType);
-                removeLayer();
+                map.overlayMapTypes.setAt("2",null);
             } else if (mapLayerType == "A3") {
                 console.log("CancelmapLayerType=" + mapLayerType)
-                removeLayer();
+                map.overlayMapTypes.setAt("1",null);
             }
         }
     });
