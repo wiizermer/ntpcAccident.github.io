@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>新北市105年肇事地點GIS分析</title>
+    <link rel="stylesheet" type="text/css" href="map.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+</head>
+
+<body onload="initialize()">
+    <nav class="navbar navbar-default"><h2>新北市105年肇事地點GIS分析</h2></nav>
+    
+    <div id="wrapper">
+        <div id="map_canvas" style="font-size=20px"></div>
+        <div id="over_map_right">
+            <div class="div_control" style>
+                <h3>地圖類型</h3>
+                <form >
+                    <div>
+                        <label>
+                            <input type="radio" id="radioA" class="map_type_control" name="mapTypeControl" value="normal" checked="true"/>
+                            <span>一般</span>
+                        </label>
+                        <label>
+                            <input type="radio" id="radioB" class="map_type_control" name="mapTypeControl" value="road"/>
+                            <span>道路</span>
+                        </label>
+                        <label>
+                            <input type="radio" id="radioC" class="map_type_control" name="mapTypeControl"  value="blue"/>
+                            <span>藍圖</span>
+                        </label>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="over_map_right_bot">
+            <div class="div_control">
+                <h3>資料類型</h3>
+                <form >
+                    <div>
+                        <label><input type="checkbox" value="A1" id="checkbox1"/><span>A1事故</span></label>
+                        <label><input type="checkbox" value="A2" id="checkbox2"/><span>A2事故</span></label>
+                        <label><input type="checkbox" value="A3" id="checkbox3"/><span>A3事故</span></label>
+                        <label><input type="button" id="clear" value="資料清空"/></label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+<!--可以把type="text/javascript" 拿掉-->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script><!--jquery load完 在執行map.js 避免map.js裡面使用jquery方法找不到-->
+<script type="text/javascript" src="map.js"></script>
+
+
+</body>
+</html>
